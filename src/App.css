@@ -16,8 +16,9 @@ body{
 
 #main{
   display: flex;
-  gap: 1%;
-  padding-top: 1%;
+  gap: 1.5%;
+  padding-top: 2%;
+  height: 500px;
 }
 
 #link{
@@ -27,6 +28,7 @@ body{
   display: flex;
   flex-direction: column;
   background: #e4ebf2;
+  gap: 10px;
   padding: 1%;
   border-radius: 10px;
 }
@@ -40,4 +42,11 @@ body{
   background: #e4ebf2;
   padding: 1%;
   border-radius: 10px;
+}
+
+a {
+  color: rgb(84, 162, 162);
+}
+a:hover{
+  color: rgb(70, 110, 110);
 }
