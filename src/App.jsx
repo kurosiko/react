@@ -1,43 +1,25 @@
 import { useState } from 'react'
 import './App.css'
-import { Tab,Tabs,TabList,TabPanel } from 'react-tabs'
-import 'react-tabs/style/react-tabs.css';
+
+import { BrowserRouter,Route,Routes} from 'react-router-dom'
+
+import {Main} from "./route/Main"
+import {T1} from "./route/T1"
+import {T2} from "./route/T2"
+import { Expect } from './route/Expect'
+import {Tool} from "./route/Tool"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 id='title'>Test Page By React</h1>
-      <div id='main'>
-        <div id='link'>
-          <h2>kurosiko</h2>
-          <a href='https://github.com/kurosiko'>GitHub</a>
-          <a href='https://www.youtube.com/channel/UCkbPdwURHuIG63f5ZTj3fjw'>YouTube</a>
-          <a href='https://twitter.com/kurosiko'>Twitter</a>
-        </div>
-        <div id='space'>
-          <Tabs>
-            <TabList>
-              <Tab>
-                Ex.
-              </Tab>
-            </TabList>
-
-            <TabPanel>
-              <h2>This is test page for react!</h2>
-              <p>Original Page ↓
-                <br></br>
-                <a href='https://kurosiko.github.io/'>here</a>
-              </p>
-              <button onClick={()=>setCount((count)=>count+1)}>
-              count is {count}
-              </button>
-            </TabPanel>
-          </Tabs>
-        </div>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='*' element={<Expect/>}/>
+        <Route path="/" element={<Main/>}/>
+        <Route path="/t1" element={<T1/>}/>
+        <Route path="/t2" element={<T2/>}/>
+        <Route path='/tool' element={<Tool/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
