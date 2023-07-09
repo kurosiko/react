@@ -6,9 +6,9 @@
   "homepage": "https://kurosiko.github.io/react",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build && gh-pages -d build",
     "dev": "vite",
-    "build": "vite build",
+    "build": "cross-env PUBLIC_URL=/react react-scripts build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "rm": "rm -rf docs",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@dnd-kit/core": "^6.0.8",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.1",

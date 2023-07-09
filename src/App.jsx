@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import './App.css'
 
+import './App.css'
 import { BrowserRouter,Route,Routes} from 'react-router-dom'
+
 
 import {Main} from "./route/Main"
 import {T1} from "./route/T1"

@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState,useEffect } from "react"
+import Cookies from "js-cookie"
 export const Main = ()=>{
     const [count, setCount] = useState(0)
+    const [adult, setIsAdult] = useState(false)
+    useEffect(()=>{
+        const check = Cookies.get("license")
+        if (check){
+            setIsAdult(true)
+        }else{
+            setIsAdult(false)
+        }
+    },[])
     return (
     <>
         <h1 id='title'>Test Page By React</h1>
@@ -28,6 +38,29 @@ export const Main = ()=>{
                 <Link to={"/tool"}>toTool</Link>
             </div>
         </div>
+        {!adult &&
+        <div id="check_r">
+            <div id="check_r_main">
+                <h3 id="title">WARNING!!</h3>
+                <p>このWebページには18歳未満の方には有害な要素が含まれます。</p>
+                <p>あなたは18歳以上ですか？</p>
+                <div id="button_box">
+                    <button id="y" onClick={()=>{
+                        Cookies.set("license",true,{expires:30})
+                        setIsAdult(true)
+                    }}>Yes</button>
+                    <button id="n" onClick={()=>{
+                        Cookies.set("license",false)
+                        let refe = document.referrer
+                        if (!refe){
+                            refe = "https://www.google.com"
+                        }
+                        window.location.href = refe
+                    }}>No</button>
+                </div>
+            </div>
+        </div>
+        }
     </>
     )
 }
