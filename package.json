@@ -8,7 +8,7 @@
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d build",
     "dev": "vite",
-    "build": "cross-env PUBLIC_URL=/react vite build",
+    "build": "cross-env PUBLIC_URL=/react react-scripts build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "rm": "rm -rf docs",
