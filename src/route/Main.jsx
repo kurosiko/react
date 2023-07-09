@@ -31,11 +31,11 @@ export const Main = ()=>{
                 <button onClick={()=>setCount((count)=>count+1)}>
                     count is {count}
                 </button>
-                <Link to={"/t1"}>toT1</Link>
+                <Link to={"/react/t1"}>toT1</Link>
                 <br></br>
-                <Link to={"/t2"}>toT2</Link>
+                <Link to={"/react/t2"}>toT2</Link>
                 <br></br>
-                <Link to={"/tool"}>toTool</Link>
+                <Link to={"/react/tool"}>toTool</Link>
             </div>
         </div>
         {!adult &&
