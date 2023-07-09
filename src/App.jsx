@@ -13,11 +13,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='react/*' element={<Expect/>}/>
-        <Route path="react/" element={<Main/>}/>
-        <Route path="react/t1" element={<T1/>}/>
-        <Route path="react/t2" element={<T2/>}/>
-        <Route path='react/tool' element={<Tool/>}/>
+        <Route path='/react/*' element={<Expect/>}/>
+        <Route path="/react/" element={<Main/>}/>
+        <Route path="/react/t1" element={<T1/>}/>
+        <Route path="/react/t2" element={<T2/>}/>
+        <Route path='/react/tool' element={<Tool/>}/>
       </Routes>
     </BrowserRouter>
   )

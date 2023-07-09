@@ -1,0 +1,2 @@
+yarn rebuild
+yarn git
