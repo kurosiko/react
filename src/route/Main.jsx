@@ -6,7 +6,10 @@ export const Main = ()=>{
     const [adult, setIsAdult] = useState(false)
     useEffect(()=>{
         const check = Cookies.get("license")
-        if (check){
+        if (check == undefined){
+            setIsAdult(false)
+        }
+        else if (JSON.parse(check.toLowerCase())){
             setIsAdult(true)
         }else{
             setIsAdult(false)

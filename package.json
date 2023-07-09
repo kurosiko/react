@@ -1,19 +1,20 @@
 {
   "name": "homepage",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://kurosiko.github.io/react",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "npm run build && gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
-    "build": "cross-env PUBLIC_URL=/react vite build",
+    "build": "vite build && cp -r dist docs", 
+    "rebuild": "vite build && rm -R docs && cp -r dist docs",
+    "start": "vite start",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "rm": "rm -rf docs",
     "mv": "mv build docs",
-    "git": "git add . && git commit && git push origin master"
+    "git": "git add . && git commit && git push origin main"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.0.8",
