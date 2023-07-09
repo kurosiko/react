@@ -54,10 +54,7 @@ export const Main = ()=>{
                     }}>Yes</button>
                     <button id="n" onClick={()=>{
                         Cookies.set("license",false)
-                        let refe = document.referrer
-                        if (!refe){
-                            refe = "https://www.google.com"
-                        }
+                        refe = "https://www.google.com"
                         window.location.href = refe
                     }}>No</button>
                 </div>
